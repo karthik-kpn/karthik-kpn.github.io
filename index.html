@@ -163,6 +163,8 @@
   .badge{font-family:var(--mono);font-size:10.5px;padding:4px 10px;border-radius:30px;letter-spacing:.5px}
   .badge.prog{background:color-mix(in srgb,var(--amber) 18%,transparent);color:var(--amber-2);border:1px solid color-mix(in srgb,var(--amber) 35%,transparent)}
   .badge.plan{background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+  .badge.live{background:color-mix(in srgb,#2fbf6e 20%,transparent);color:#69e39c;border:1px solid color-mix(in srgb,#2fbf6e 42%,transparent)}
+  html.light .badge.live{color:#1c8a4e}
   .card h3{font-family:var(--display);font-size:22px;font-weight:600;line-height:1.15;margin-bottom:12px}
   .card p{font-size:14px;color:var(--muted);flex:1}
   .card .tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
@@ -417,11 +419,11 @@
       </div>
 
       <div class="card reveal" data-cat="analytics">
-        <div class="card-top"><span class="cat">Analytics</span><span class="badge plan">Planned</span></div>
+        <div class="card-top"><span class="cat">Analytics</span><span class="badge live">Live</span></div>
         <h3>OTC Process Mining &amp; Bottleneck Analyzer</h3>
-        <p>Process-mine a synthetic Order-to-Cash event log (order → delivery → goods issue → billing → payment) to discover the real flow, rework loops and cycle-time bottlenecks.</p>
-        <div class="tech"><span>Python</span><span>PM4Py</span><span>Process Mining</span></div>
-        <div class="links"><a href="#">Repo →</a></div>
+        <p>Process-mined a 1,800-order synthetic Order-to-Cash log to reconstruct the as-is flow and rank where orders wait — backorders and credit blocks surfaced as the top controllable bottlenecks.</p>
+        <div class="tech"><span>Python</span><span>pandas</span><span>networkx</span><span>Process Mining</span></div>
+        <div class="links"><a href="https://github.com/karthik-kpn/otc-process-mining" target="_blank" rel="noopener">Repo →</a><a href="https://karthik-kpn.github.io/otc-process-mining/report.html" target="_blank" rel="noopener">Demo →</a></div>
       </div>
 
       <div class="card reveal" data-cat="sap">
