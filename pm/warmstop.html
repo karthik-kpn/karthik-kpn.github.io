@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WarmStop — Pitch Deck · Karthik Krishnagiri Pachiyappan</title>
+<meta name="description" content="WarmStop — a heated, ergonomic, ADA-ready winter transit bench for UMass Amherst. Product vision, market sizing, competitive differentiation, KPIs, a 4-phase roadmap, stakeholder matrix, and a $10K Winter-2026 pilot ask. Product Management, UMass Amherst." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0c10; --bg-2:#0f1218; --surface:#14181f; --surface-2:#1b212b;
+    --border:rgba(255,255,255,.09); --border-strong:rgba(255,255,255,.16);
+    --text:#ecebe6; --muted:#9098a4;
+    --amber:#f7a93b; --amber-2:#ffc977; --cyan:#34d8c8; --cyan-2:#7af0e4;
+    --good:#5fd39a; --bad:#e8806b;
+    --display:'Fraunces',Georgia,serif;
+    --body:'Familjen Grotesk',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --shadow:0 24px 60px -20px rgba(0,0,0,.6);
+    --maxw:1060px;
+  }
+  html.light{
+    --bg:#f3efe6; --bg-2:#ece7db; --surface:#ffffff; --surface-2:#f8f4eb;
+    --border:rgba(0,0,0,.10); --border-strong:rgba(0,0,0,.18);
+    --text:#16181d; --muted:#5a606b; --good:#1c8a4e; --bad:#c0492f;
+    --shadow:0 24px 60px -28px rgba(40,30,10,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .5s,color .5s}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--amber);color:#0a0c10}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .top{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--border)}
+  .top .bar{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+  .back{font-family:var(--mono);font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:9px;transition:.25s}
+  .back:hover{color:var(--amber)}
+  .back .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 12px var(--amber)}
+  .toggle{width:36px;height:36px;border:1px solid var(--border-strong);background:var(--surface);border-radius:50%;cursor:pointer;color:var(--text);display:grid;place-items:center;transition:.3s;font-size:15px}
+  .toggle:hover{transform:rotate(20deg);border-color:var(--amber)}
+
+  .hero{position:relative;overflow:hidden;padding:64px 0 30px}
+  .hero .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none}
+  .hero .blob.a{width:360px;height:360px;background:radial-gradient(circle,var(--amber),transparent 70%);top:-120px;right:-40px}
+  .hero .blob.b{width:300px;height:300px;background:radial-gradient(circle,var(--cyan),transparent 70%);bottom:-160px;left:-60px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;position:relative;z-index:1}
+  .eyebrow .ln{width:32px;height:1px;background:var(--amber)}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:-.02em;position:relative;z-index:1}
+  .lede{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:700px;margin-top:20px;position:relative;z-index:1}
+  .lede b{color:var(--text);font-weight:600}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;position:relative;z-index:1}
+  .tag{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--border);background:var(--surface);padding:7px 13px;border-radius:30px}
+  .tag b{color:var(--cyan);font-weight:500}
+
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:38px 0 8px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 18px}
+  .stat .n{font-family:var(--display);font-size:clamp(20px,2.7vw,30px);font-weight:600;line-height:1}
+  .stat .n .suf{color:var(--amber)}
+  .stat .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;color:var(--muted);margin-top:8px;line-height:1.4;text-transform:uppercase}
+
+  .sec{padding:40px 0;border-top:1px solid var(--border)}
+  .sec:first-of-type{border-top:none}
+  .sec-num{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:1px}
+  .sec h2{font-family:var(--display);font-size:clamp(24px,3.4vw,34px);font-weight:600;letter-spacing:-.01em;margin:6px 0 18px}
+  .sec p{color:var(--muted);font-size:15.5px;max-width:760px}
+  .sec p+p{margin-top:12px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;transition:.3s}
+  .card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+  .card .ic{font-family:var(--mono);font-size:11px;letter-spacing:.6px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px}
+  .card h3{font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:8px}
+  .card p{font-size:14px;color:var(--muted);max-width:none}
+  .card ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:7px}
+  .card li{padding-left:18px;position:relative;font-size:13.5px;color:var(--muted)}
+  .card li::before{content:"▸";position:absolute;left:0;color:var(--amber)}
+  .card li b{color:var(--text);font-weight:600}
+
+  /* tables */
+  .tbl{width:100%;border-collapse:collapse;margin-top:8px;font-size:13.5px;overflow:hidden;border-radius:14px;border:1px solid var(--border)}
+  .tbl th,.tbl td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  .tbl thead th{font-family:var(--mono);font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--amber);background:var(--surface-2)}
+  .tbl tbody tr:last-child td{border-bottom:none}
+  .tbl tbody tr:nth-child(odd) td{background:color-mix(in srgb,var(--surface) 60%,transparent)}
+  .tbl .feat{color:var(--text);font-weight:600}
+  .yes{color:var(--good);font-weight:600}
+  .no{color:var(--bad)}
+  .mid{color:var(--amber-2)}
+  .tbl.total td{font-weight:700;color:var(--text);background:color-mix(in srgb,var(--amber) 12%,var(--surface-2))}
+
+  /* roadmap timeline */
+  .road{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .phase{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative}
+  .phase::before{content:"";position:absolute;top:0;left:22px;right:22px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--amber),var(--cyan))}
+  .phase .yr{font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:.5px;margin-top:6px}
+  .phase h4{font-family:var(--display);font-size:18px;font-weight:600;margin:4px 0 10px}
+  .phase ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .phase li{padding-left:16px;position:relative;font-size:13px;color:var(--muted)}
+  .phase li::before{content:"–";position:absolute;left:0;color:var(--amber)}
+
+  .ask{background:color-mix(in srgb,var(--amber) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--amber) 32%,transparent);border-radius:16px;padding:20px 22px;margin-top:18px;font-size:15.5px}
+  .ask b{color:var(--amber-2)}
+
+  footer{border-top:1px solid var(--border);padding:30px 0;margin-top:20px;text-align:center}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  footer span,footer a{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  footer a:hover{color:var(--amber)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid2,.grid3{grid-template-columns:1fr}
+    .road{grid-template-columns:1fr 1fr}
+    .tbl{font-size:12.5px}
+  }
+  @media(max-width:520px){.road{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="bar">
+    <a class="back" href="index.html"><span class="dot"></span>Karthik K. Pachiyappan — Portfolio</a>
+    <button class="toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="blob a"></div><div class="blob b"></div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>Pitch Deck · Product Management</div>
+    <h1>WarmStop</h1>
+    <p class="lede">A heated, ergonomic, ADA-ready winter transit bench for UMass Amherst — turning freezing metal benches that <b>almost nobody uses (&lt;10%)</b> into seating that targets <b>60%+ utilization</b>, launching as a <b>$10K, 3-bench Winter 2026 pilot</b> with a roadmap to a solar-powered "Smart Stop."</p>
+    <div class="meta-row">
+      <span class="tag">Course <b>Product Management</b></span>
+      <span class="tag">UMass Amherst</span>
+      <span class="tag">Team of <b>5</b></span>
+      <span class="tag">Role <b>Product Strategy &amp; Analysis</b></span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">&lt;10<span class="suf">%</span>→60<span class="suf">%</span></div><div class="l">Bench utilization<br>(today → target)</div></div>
+      <div class="stat"><div class="n">$10<span class="suf">K</span></div><div class="l">Pilot budget<br>(the ask)</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Pilot benches<br>Winter 2026</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Roadmap phases<br>2026 → 2030</div></div>
+      <div class="stat"><div class="n">Winter<br>2026</div><div class="l">Go-live<br>target</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="sec reveal">
+    <span class="sec-num">01</span>
+    <h2>The problem</h2>
+    <p>UMass transit riders wait through brutal New England winters on <b>cold metal benches that go almost unused — under 10% utilization</b>. Riders stand in the cold instead of sitting on freezing, ice-covered, ergonomically poor seating, hurting comfort, accessibility, and the campus experience at high-traffic transit hubs.</p>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">02</span>
+    <h2>Product vision &amp; solution</h2>
+    <p>WarmStop reimagines the transit bench as a comfortable, all-weather, accessible-by-design seat that people actually want to use in winter.</p>
+    <div class="grid3">
+      <div class="card"><div class="ic">Comfort</div><h3>Heated &amp; ergonomic</h3><p>Heated HDPE surface with lumbar support and cushioning — warm, supportive seating built for sub-freezing waits.</p></div>
+      <div class="card"><div class="ic">Durability</div><h3>Ice-shedding &amp; ADA</h3><p>Hydrophobic surface sheds ice and water; ADA compliance designed in from the start, not bolted on.</p></div>
+      <div class="card"><div class="ic">Future-ready</div><h3>Solar-ready &amp; smart</h3><p>Solar-ready energy with a path to LED safety lighting and sensor data — a campus brand differentiator.</p></div>
+    </div>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">03</span>
+    <h2>Competitive differentiation</h2>
+    <table class="tbl">
+      <thead><tr><th>Dimension</th><th>Traditional metal bench</th><th>WarmStop</th></tr></thead>
+      <tbody>
+        <tr><td class="feat">Winter comfort</td><td><span class="no">✕</span> Freezing cold</td><td><span class="yes">✓</span> Heated + HDPE</td></tr>
+        <tr><td class="feat">Ergonomics</td><td><span class="no">✕</span> Narrow, no support</td><td><span class="yes">✓</span> Lumbar + cushion</td></tr>
+        <tr><td class="feat">Drainage / ice</td><td><span class="no">✕</span> Accumulates ice</td><td><span class="yes">✓</span> Hydrophobic surface</td></tr>
+        <tr><td class="feat">Maintenance</td><td><span class="yes">✓</span> Low</td><td><span class="mid">~</span> Moderate (heating)</td></tr>
+        <tr><td class="feat">Upfront cost</td><td><span class="yes">✓</span> Low</td><td><span class="mid">~</span> Higher (recoverable)</td></tr>
+        <tr><td class="feat">ADA compliance</td><td><span class="mid">~</span> Partial</td><td><span class="yes">✓</span> Designed in</td></tr>
+        <tr><td class="feat">Energy source</td><td>None</td><td><span class="yes">✓</span> Solar-ready</td></tr>
+        <tr><td class="feat">Excitement / brand</td><td><span class="no">✕</span> None</td><td><span class="yes">✓</span> Campus differentiator</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">04</span>
+    <h2>Market &amp; business case</h2>
+    <p>WarmStop targets UMass Amherst's <b>30,000+ daily commuters</b> with a clear expansion path across PVTA transit and the <b>Five College Consortium</b>. The case was pressure-tested with <b>market opportunity &amp; sizing, a 5C analysis, and PESTLE &amp; SWOT</b> — framing demand, competitive context, and the macro factors (climate, accessibility regulation, campus reputation) that make heated, ADA-ready seating a defensible bet.</p>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">05</span>
+    <h2>Success metrics &amp; KPIs</h2>
+    <div class="grid3">
+      <div class="card"><div class="ic">Primary KPI</div><h3>Utilization &gt; 60%</h3><p>Lift bench utilization from under 10% today to a 60%+ winter target — the headline success metric and the gate to Phase 2.</p></div>
+      <div class="card"><div class="ic">Operational</div><h3>Less standing congestion</h3><p>Reduce crowding and standing at transit hubs as seating becomes usable through the cold months.</p></div>
+      <div class="card"><div class="ic">Evidence</div><h3>Winter feedback loop</h3><p>Capture rider feedback (QR codes) and utilization data each winter to feed iteration and the scale-up decision.</p></div>
+    </div>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">06</span>
+    <h2>Product roadmap</h2>
+    <div class="road">
+      <div class="phase">
+        <div class="yr">2026</div><h4>Proof of Concept</h4>
+        <ul><li>3 pilot benches — Haigis Mall &amp; Fine Arts Center</li><li>Material selection + ergonomic testing</li><li>Metric: utilization vs. baseline</li></ul>
+      </div>
+      <div class="phase">
+        <div class="yr">Early 2027</div><h4>Iteration</h4>
+        <ul><li>Analyze winter feedback data</li><li>Refine lumbar angle &amp; surface materials</li><li>Add campus branding elements</li></ul>
+      </div>
+      <div class="phase">
+        <div class="yr">Late 2027</div><h4>Campus Rollout</h4>
+        <ul><li>Expand to major campus transit hubs</li><li>Modular components for easy maintenance</li><li>Metric: reduce standing congestion</li></ul>
+      </div>
+      <div class="phase">
+        <div class="yr">2028–30</div><h4>Smart Stop</h4>
+        <ul><li>Solar heating + LED safety lighting</li><li>Full ADA compliance</li><li>PVTA + Five College expansion</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">07</span>
+    <h2>The pilot &amp; the ask</h2>
+    <table class="tbl">
+      <thead><tr><th>Pilot cost item</th><th>Estimated cost</th></tr></thead>
+      <tbody>
+        <tr><td>Material procurement &amp; fabrication</td><td>$4,500</td></tr>
+        <tr><td>Safety &amp; ADA testing</td><td>$2,500</td></tr>
+        <tr><td>Installation logistics</td><td>$2,000</td></tr>
+        <tr><td>Contingency buffer</td><td>$1,000</td></tr>
+      </tbody>
+    </table>
+    <table class="tbl total" style="margin-top:8px"><tbody><tr><td>Total pilot budget</td><td>$10,000</td></tr></tbody></table>
+    <div class="ask">🎯 <b>Immediate ask:</b> approval of a <b>$10K budget</b> for a <b>Winter 2026, 3-bench pilot</b>, with utilization data feeding the Phase-2 scale-up decision.</div>
+  </section>
+
+  <section class="sec reveal">
+    <span class="sec-num">08</span>
+    <h2>Stakeholders &amp; go-to-market</h2>
+    <p>A stakeholder matrix mapped each player by influence and interest, with a tailored engagement strategy — paired with a go-to-market plan and a risks-and-mitigation register.</p>
+    <table class="tbl">
+      <thead><tr><th>Stakeholder</th><th>Role</th><th>Influence / Interest</th><th>Engagement strategy</th></tr></thead>
+      <tbody>
+        <tr><td class="feat">UMass Facilities</td><td>Decision-maker</td><td>High / High</td><td>Data-driven ROI; phased pilot to de-risk</td></tr>
+        <tr><td class="feat">PVTA</td><td>Strategic partner</td><td>High / High</td><td>Co-brand &amp; share utilization data; align on ridership</td></tr>
+        <tr><td class="feat">Student Govt (SGA)</td><td>Advocate</td><td>Medium / High</td><td>Champions + student petition for social proof</td></tr>
+        <tr><td class="feat">University Admin</td><td>Approver</td><td>High / Medium</td><td>Student-satisfaction &amp; reputational benefits</td></tr>
+        <tr><td class="feat">Five College Consortium</td><td>Expansion target</td><td>Medium / Medium</td><td>Pilot observation; cost-sharing opportunity</td></tr>
+        <tr><td class="feat">Students / Faculty</td><td>Users / advocates</td><td>Low / High</td><td>QR-code feedback; showcase comfort gains</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Karthik Krishnagiri Pachiyappan</span>
+    <a href="index.html">← Back to portfolio</a>
+  </div>
+</footer>
+
+<script>
+  const root=document.documentElement,tBtn=document.getElementById('themeBtn');
+  tBtn.addEventListener('click',()=>{root.classList.toggle('light');tBtn.textContent=root.classList.contains('light')?'◑':'◐';});
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
