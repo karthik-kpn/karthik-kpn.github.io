@@ -261,9 +261,9 @@
       <span class="status"><span class="live"></span>Open to roles · Graduated (May 2026)</span>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n" data-to="3"><span>0</span><span class="suf">+</span></div><div class="l">YEARS<br>PROGRAM &amp; PROJECT DELIVERY</div></div>
-      <div class="stat"><div class="n" data-to="3"><span>0</span></div><div class="l">FULL-LIFECYCLE<br>ENTERPRISE GO-LIVES</div></div>
-      <div class="stat"><div class="n" data-to="24"><span>0</span></div><div class="l">ENHANCEMENT<br>PROJECTS LED</div></div>
+      <div class="stat"><div class="n" data-to="3"><span>3</span><span class="suf">+</span></div><div class="l">YEARS<br>PROGRAM &amp; PROJECT DELIVERY</div></div>
+      <div class="stat"><div class="n" data-to="3"><span>3</span></div><div class="l">FULL-LIFECYCLE<br>ENTERPRISE GO-LIVES</div></div>
+      <div class="stat"><div class="n" data-to="24"><span>24</span></div><div class="l">ENHANCEMENT<br>PROJECTS LED</div></div>
     </div>
   </div>
 </header>
@@ -286,8 +286,8 @@
         </div>
         <div class="about-card">
         <h4>// Quick Facts</h4>
-        <div class="fact"><span>Focus</span><span>Program / Project Management · SAP S/4HANA Delivery</span></div>
-        <div class="fact"><span>Location</span><span>Boston, MA</span></div>
+        <div class="fact"><span>Focus</span><span>Program / Project / Technical Program Management · Software &amp; Enterprise Delivery</span></div>
+        <div class="fact"><span>Location</span><span>Boston, MA · open to relocation</span></div>
         <div class="fact"><span>Experience</span><span>3+ yrs · Accenture</span></div>
         <div class="fact"><span>Education</span><span>M.S. Engineering Management · University of Massachusetts Amherst</span></div>
         <div class="fact"><span>Graduation</span><span>May 2026</span></div>
@@ -436,29 +436,6 @@
         <div class="links"><a href="smart-trash.html">Read Summary →</a></div>
       </div>
 
-      <div class="card reveal" data-cat="pm">
-        <div class="card-top"><span class="cat">Program · Governance</span><span class="badge plan">Planned</span></div>
-        <h3>Risk &amp; Dependency Tracker</h3>
-        <p>A lightweight RAID/dependency board that scores program risks by likelihood × impact, maps cross-team dependencies, and flags critical-path slippage — the governance layer behind a clean delivery.</p>
-        <div class="tech"><span>Streamlit</span><span>RAID</span><span>Critical Path</span></div>
-        <div class="links"><a href="#">Repo →</a><a href="#">Demo →</a></div>
-      </div>
-
-      <div class="card reveal" data-cat="analytics">
-        <div class="card-top"><span class="cat">Analytics · KPI</span><span class="badge plan">Planned</span></div>
-        <h3>Program KPI &amp; SLA Dashboard</h3>
-        <p>An interactive dashboard translating delivery and operations data into program KPIs and SLAs — on-time rate, scope creep, defect aging and cost-to-value — for status reporting to senior leadership.</p>
-        <div class="tech"><span>Power BI</span><span>SQL</span><span>SAP Analytics Cloud</span></div>
-        <div class="links"><a href="#">Dashboard →</a></div>
-      </div>
-
-      <div class="card reveal" data-cat="analytics">
-        <div class="card-top"><span class="cat">Analytics · Forecast</span><span class="badge plan">Planned</span></div>
-        <h3>Predictive Delivery Analytics</h3>
-        <p>Predictive models on synthetic delivery data to forecast milestone risk and demand, turning historical program telemetry into a forward-looking planning story.</p>
-        <div class="tech"><span>Python</span><span>Smart Predict</span><span>Data Modeling</span></div>
-        <div class="links"><a href="#">Repo →</a><a href="#">Demo →</a></div>
-      </div>
 
     </div>
   </div>
@@ -557,7 +534,7 @@
       const t=setInterval(()=>{v+=step;if(v>=to){v=to;clearInterval(t);}span.textContent=v;},26);
     });
   }
-  addEventListener('load',()=>setTimeout(runCounters,400));
+  if(document.readyState!=='loading'){runCounters();}else{addEventListener('DOMContentLoaded',runCounters);}
 
   // project filter
   const grid=document.getElementById('grid');
