@@ -220,7 +220,8 @@
     </div>
     <div class="nav-tools">
       <button class="toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
-      <a class="btn btn-primary" href="Karthik-Pachiyappan-Resume-BA.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+      <a class="btn btn-ghost" href="../index.html">SAP / CX Portfolio ↗</a>
+      <a class="btn btn-primary" href="Karthik-Pachiyappan-BA-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
       <div class="hamburger" id="burger"><span></span><span></span><span></span></div>
     </div>
   </div>
@@ -377,14 +378,14 @@
       <button class="filt" data-f="process">Process Mining</button>
       <button class="filt" data-f="finance">Financial Modeling</button>
       <button class="filt" data-f="dashboard">Dashboards</button>
-      <button class="filt" data-f="planning">Strategy &amp; Planning</button>
+      <button class="filt" data-f="pm">Program &amp; Strategy</button>
     </div>
     <div class="proj-grid" id="grid">
 
       <div class="card reveal" data-cat="process">
-        <div class="card-top"><span class="cat">Process Mining</span><span class="badge live">Live</span></div>
-        <h3>Quote-to-Order Cycle Analysis</h3>
-        <p>Reconstructed 18,181 timestamped events across 1,800 orders into 16 process variants, isolating where a 24.3-day median cycle was lost. Ranked backorder release as the top controllable bottleneck at 18.6% of orders and 4.9 days — ahead of credit blocks and compliance holds — and showed the operational measure belongs on fulfillment lead time, not total cycle time, since payment terms dominate the total.</p>
+        <div class="card-top"><span class="cat">Analytics · Risk</span><span class="badge live">Live</span></div>
+        <h3>Process-Mining &amp; Bottleneck Analyzer</h3>
+        <p>Process-mined an 1,800-order Order-to-Cash log to reconstruct the as-is flow and rank where work waits — surfacing backorders, credit blocks and compliance holds as the top controllable bottlenecks to drive delivery prioritization.</p>
         <div class="tech"><span>Python</span><span>pandas</span><span>networkx</span><span>Process Mining</span></div>
         <div class="links"><a href="https://github.com/karthik-kpn/otc-process-mining" target="_blank" rel="noopener">Repo →</a><a href="https://karthik-kpn.github.io/otc-process-mining/report.html" target="_blank" rel="noopener">Demo →</a></div>
       </div>
@@ -406,25 +407,27 @@
       </div>
 
       <div class="card reveal" data-cat="dashboard">
-        <div class="card-top"><span class="cat">Dashboard</span><span class="badge live">Live</span></div>
-        <h3>Order &amp; Contract Status Cockpit</h3>
-        <p>A master-detail dashboard that follows each order from quotation through pricing, credit check and availability to delivery and billing — flagging exceptions so the business can self-serve answers that previously required an escalation to IT.</p>
-        <div class="tech"><span>SAPUI5</span><span>Fiori Horizon</span><span>JSON Model</span></div>
+        <div class="card-top"><span class="cat">Front-End · Visibility</span><span class="badge live">Live</span></div>
+        <h3>Delivery / Order Status Cockpit</h3>
+        <p>A master-detail SAPUI5 cockpit giving stakeholders one view of each order's journey — credit, availability and fulfillment status with ATP/credit-block flags and drill-down for faster decisions and escalation.</p>
+        <div class="tech"><span>SAPUI5</span><span>Fiori Horizon</span><span>JSON Model</span><span>GitHub Pages</span></div>
         <div class="links"><a href="https://github.com/karthik-kpn/otc-order-cockpit" target="_blank" rel="noopener">Repo →</a><a href="https://karthik-kpn.github.io/otc-order-cockpit/" target="_blank" rel="noopener">Live →</a></div>
       </div>
 
-      <div class="card reveal" data-cat="planning">
-        <div class="card-top"><span class="cat">Strategy · Market Entry</span><span class="badge doc">Coursework</span></div>
-        <h3>WarmStop — Market Entry Analysis</h3>
-        <p>Sized a 30,000+ commuter market for a heated transit-bench concept, ran SWOT and PESTLE analysis on the competitive landscape, and built a five-year financial model showing a ~$1.1M revenue path scaling from a $10K pilot toward regional rollout.</p>
-        <div class="tech"><span>Market Sizing</span><span>SWOT / PESTLE</span><span>5-Year Financial Model</span></div>
+      <div class="card reveal" data-cat="pm">
+        <div class="card-top"><span class="cat">Program · Product Strategy</span><span class="badge prog">Pitch Deck</span></div>
+        <h3>WarmStop — UMass Transit Infrastructure</h3>
+        <p>Owned the product vision, GTM strategy and KPI-driven roadmap for a winter transit-seating product — market sizing (30,000+ commuters; ~$1.1M five-year path), competitive / SWOT / PESTLE analysis, a business case, success metrics (bench utilization &lt;10% to &gt;60%), and a phased plan scaling a $10K pilot toward regional rollout.</p>
+        <div class="tech"><span>Product Vision</span><span>GTM</span><span>Market Sizing</span><span>SWOT / PESTLE</span><span>KPI Roadmap</span></div>
+        <div class="links"><a href="warmstop.html">Read Summary →</a></div>
       </div>
 
-      <div class="card reveal" data-cat="planning">
-        <div class="card-top"><span class="cat">Project Management</span><span class="badge doc">Coursework</span></div>
-        <h3>Smart Trash — IoT Deployment Plan</h3>
-        <p>End-to-end project plan for a laser-sensor IoT bin-monitoring system with mobile app alerts. Built a $245,686 budget (15% contingency), a 136-day schedule with a 99-day critical path, a maintained risk register, and four schedule-recovery strategies including a 20% test-cycle-time reduction.</p>
-        <div class="tech"><span>WBS</span><span>Critical Path</span><span>Risk Register</span></div>
+      <div class="card reveal" data-cat="pm">
+        <div class="card-top"><span class="cat">Program · Technical PM</span><span class="badge prog">Pitch Deck</span></div>
+        <h3>Smart Trash System — Technical PM</h3>
+        <p>Project-managed the end-to-end plan for an IoT bin-monitoring system in MS Project — a work breakdown structure, a $246K cost estimate (15% contingency) and a Gantt schedule across a 136-day timeline; ran critical-path analysis (99-day path) plus schedule-recovery and risk-mitigation strategies with bi-weekly stakeholder reviews.</p>
+        <div class="tech"><span>MS Project</span><span>WBS</span><span>Critical Path</span><span>Cost Estimation</span><span>Risk Register</span></div>
+        <div class="links"><a href="smart-trash.html">Read Summary →</a></div>
       </div>
 
     </div>
